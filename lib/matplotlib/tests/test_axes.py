@@ -76,6 +76,9 @@ def test_formatter_ticker():
     ax.set_xlabel("x-label 005")
     ax.autoscale_view()
 
+    # REMOVE ME
+    assert False
+
 
 @image_comparison(baseline_images=["formatter_large_small"])
 def test_formatter_large_small():
