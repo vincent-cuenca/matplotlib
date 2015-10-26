@@ -22,8 +22,7 @@ addons:
 
 env:
   global:
-    - ARTIFACTS_AWS_REGION=us-east-1
-    - ARTIFACTS_S3_BUCKET=matplotlib-test-results
+    - ARTIFACTS_BUCKET=matplotlib-test-results
     - BUILD_DOCS=false
     - NUMPY=numpy
     - PANDAS=
