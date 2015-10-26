@@ -18,7 +18,7 @@ addons:
 #      - debian-sid
   artifacts:
     paths:
-      - $TRAVIS_BUILD_DIR/../tmp_test_dir/result_images.tar.bz2
+      - result_images.tar.bz2
 
 env:
   global:
@@ -28,7 +28,7 @@ env:
     - secure: E7OCdqhZ+PlwJcn+Hd6ns9TDJgEUXiUNEI0wu7xjxB2vBRRIKtZMbuaZjd+iKDqCKuVOJKu0ClBUYxmgmpLicTwi34CfTUYt6D4uhrU+8hBBOn1iiK51cl/aBvlUUrqaRLVhukNEBGZcyqAjXSA/Qsnp2iELEmAfOUa92ZYo1sk=
     - secure: "dfjNqGKzQG5bu3FnDNwLG8H/C4QoieFo4PfFmZPdM2RY7WIzukwKFNT6kiDfOrpwt+2bR7FhzjOGlDECGtlGOtYPN8XuXGjhcP4a4IfakdbDfF+D3NPIpf5VlE6776k0VpvcZBTMYJKNFIMc7QPkOwjvNJ2aXyfe3hBuGlKJzQU="
     - BUILD_DOCS=false
-    - NUMPY=numpy
+7    - NUMPY=numpy
     - PANDAS=
     - NPROC=2
     - TEST_ARGS=--no-pep8
@@ -127,7 +127,6 @@ script:
 after_failure:
   |
   if [[ $BUILD_DOCS == false && $TRAVIS_PULL_REQUEST == false && $TRAVIS_REPO_SLUG == 'matplotlib/matplotlib' ]]; then
-    cd $TRAVIS_BUILD_DIR/../tmp_test_dir
     tar cjf result_images.tar.bz2 result_images
     echo https://s3.amazonaws.com/matplotlib-test-results/artifacts/${TRAVIS_BUILD_NUMBER}/${TRAVIS_JOB_NUMBER}/result_images.tar.bz2
   else
