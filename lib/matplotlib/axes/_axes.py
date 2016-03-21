@@ -2447,9 +2447,6 @@ class Axes(_AxesBase):
         bottom = kwargs.pop('bottom', None)
         label = kwargs.pop('label', None)
 
-        if vertical:
-            x, y = y, x
-
         markerline, = self.plot(x, y, markerfmt, label="_nolegend_")
 
         if bottom is None:
